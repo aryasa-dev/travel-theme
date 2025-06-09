@@ -2,11 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  @apply text-slate-500;
+}
+
 h1,
 h2,
 h3,
 h4 {
-  @apply font-bold;
+  @apply font-bold text-black;
 }
 
 button {

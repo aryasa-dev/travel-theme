@@ -29,3 +29,13 @@ const swiper = new Swiper(".mySwiper", {
     },
   },
 });
+
+document.querySelectorAll(".faq-toggle").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const content = btn.nextElementSibling;
+    const icon = btn.querySelector(".faq-icon");
+
+    content.classList.toggle("hidden");
+    icon.classList.toggle("rotate-45");
+  });
+});
