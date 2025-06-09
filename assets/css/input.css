@@ -21,6 +21,26 @@ button {
   @apply transition-all duration-300;
 }
 
+.button {
+  @apply px-6 py-3 rounded-full transition-all duration-300 flex items-center gap-x-2 font-semibold;
+}
+
+.button-primary {
+  @apply bg-orange-500 hover:bg-orange-400 text-white;
+}
+
+.navbar-scrolled {
+  @apply bg-white text-gray-800 shadow-md;
+}
+
+.navbar-scrolled .nav-menu {
+  @apply text-slate-800;
+}
+
+.rotate-icon {
+  @apply rotate-45
+}
+
 .swiper-wrapper {
   align-items: stretch;
 }

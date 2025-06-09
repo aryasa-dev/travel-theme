@@ -36,6 +36,19 @@ document.querySelectorAll(".faq-toggle").forEach((btn) => {
     const icon = btn.querySelector(".faq-icon");
 
     content.classList.toggle("hidden");
-    icon.classList.toggle("rotate-45");
+    icon.classList.toggle("rotate-icon");
   });
+});
+
+// Navbar scrolled
+const navbar = document.getElementById("navbar");
+// const navMenu = document.getElementById("nav-menu")
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add("navbar-scrolled");
+    // navbar.classList.add("nav-menu-scrolled")
+  } else {
+    navbar.classList.remove("navbar-scrolled");
+    // navbar.classList.remove("nav-menu-scrolled")
+  }
 });

@@ -25,20 +25,21 @@
   <body>
     <!-- Navbar -->
     <nav
-      class="fixed top-0 left-0 right-0 w-full z-10 flex justify-between items-center px-6 md:px-16 bg-transparent py-4"
+      class="fixed top-0 left-0 right-0 w-full z-30 flex justify-between items-center px-6 md:px-16 bg-transparent py-4"
+      id="navbar"
     >
       <a href="#">
         <img src="assets/images/logo.png" alt="logo" />
       </a>
       <!-- <div class="text-2xl font-bold text-white">NomadVerse</div> -->
-      <ul class="hidden md:flex gap-8 font-medium text-white">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Destinations</a></li>
-        <li><a href="#">Packages</a></li>
-        <li><a href="#">About Us</a></li>
+      <ul class="hidden md:flex gap-8 text-white nav-menu" id="nav-menu">
+        <li><a href="#" class="font-semibold">Home</a></li>
+        <li><a href="#" class="font-semibold">Destinations</a></li>
+        <li><a href="#" class="font-semibold">Packages</a></li>
+        <li><a href="#" class="font-semibold">About Us</a></li>
       </ul>
       <div class="flex gap-4">
-        <button class="text-white font-semibold">Login</button>
+        <!-- <button class="text-white font-semibold">Login</button> -->
         <button
           class="bg-sky-600 text-white px-5 py-2 font-semibold rounded-full hover:bg-sky-700"
         >
@@ -150,15 +151,13 @@
               ><br />
               Coveted NomadVerse Destinations
             </h2>
-            <p class="text-slate-500 mt-4">
+            <p class="text-slate-500 mt-4 mb-6">
               From Exotic Escapes to Hidden Gems, Discover Where Adventure
               Awaits.
             </p>
-            <button
-              class="mt-6 bg-orange-400 hover:bg-orange-500 text-white px-6 py-3 rounded-full font-semibold shadow inline-flex items-center gap-2"
-            >
+            <button class="button button-primary">
               <i data-lucide="compass" class="w-5 h-5"></i>
-              Let’s Start your Trip
+              <span>Let’s Start your Trip</span>
             </button>
           </div>
 
@@ -296,7 +295,7 @@
         </div>
       </section>
 
-      <!--  -->
+      <!-- Why NomadVerse -->
       <section class="bg-white py-20">
         <div class="container">
           <div class="grid grid-cols-2 items-start">
@@ -313,18 +312,16 @@
                 </span>
               </h2>
 
-              <p class="mt-4">
+              <p class="mt-4 mb-6">
                 At NomadVerse, we believe in making travel accessible and
                 exciting. Our unique approach to planning and experiencing trips
                 ensures that you have a stress-free journey from start to
                 finish.
               </p>
 
-              <button
-                class="mt-6 bg-orange-400 hover:bg-orange-500 text-white px-6 py-3 rounded-full font-semibold shadow inline-flex items-center gap-2"
-              >
+              <button class="button button-primary">
                 <i data-lucide="compass" class="w-5 h-5"></i>
-                Let’s Start your Trip
+                <span> Let’s Start your Trip </span>
               </button>
             </div>
 
@@ -380,10 +377,47 @@
           </div>
         </div>
       </section>
-      <!--  -->
+      <!-- Why NomadVerse -->
 
-      <!--  -->
-      <section class="py-20 bg-[#FFF0EC]">
+      <!-- Stats -->
+      <section class="py-20">
+        <div class="container">
+          <div class="relative h-72 flex justify-center items-center">
+            <img
+              src="assets/images/bg-stats.png"
+              alt="background stats"
+              class="absolute -z-10 inset-0 mx-auto"
+            />
+
+            <!-- Stats Content -->
+            <div class="flex items-center gap-8">
+              <div class="text-center">
+                <h4 class="text-5xl text-white font-extrabold">100k</h4>
+                <p class="font-semibold text-xl text-white">Happy Client</p>
+              </div>
+              <div class="bg-white w-[1px] h-14"></div>
+              <div class="text-center">
+                <h4 class="text-5xl text-white font-extrabold">+50k</h4>
+                <p class="font-semibold text-xl text-white">Destinations</p>
+              </div>
+              <div class="bg-white w-[1px] h-14"></div>
+              <div class="text-center">
+                <h4 class="text-5xl text-white font-extrabold">+36</h4>
+                <p class="font-semibold text-xl text-white">Global Branch</p>
+              </div>
+              <div class="bg-white w-[1px] h-14"></div>
+              <div class="text-center">
+                <h4 class="text-5xl text-white font-extrabold">+22k</h4>
+                <p class="font-semibold text-xl text-white">Campaigns</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Stats -->
+
+      <!-- Package -->
+      <section class="py-20 bg-[url('/assets/images/bg-package.png')] bg-cover">
         <div class="container">
           <div class="max-w-[35%] mx-auto text-center">
             <h2
@@ -544,7 +578,7 @@
           </div>
         </div>
       </section>
-      <!--  -->
+      <!-- Package -->
 
       <!-- Testimoni Section -->
       <section class="py-20">
@@ -705,7 +739,7 @@
           </div>
 
           <div
-            class="max-w-6xl mx-auto mt-16 border border-[#E4E6E8] rounded-2xl"
+            class="max-w-6xl mx-auto mt-16 border border-[#E4E6E8] rounded-2xl overflow-hidden"
           >
             <!-- FAQ Item -->
             <div class="border-b border-b-[#E4E6E8]">
@@ -715,10 +749,9 @@
                 <h3 class="font-bold text-xl">
                   How do I book a trip on NomadVerse?
                 </h3>
-                <i
-                  data-lucide="plus"
-                  class="transition-all duration-300 faq-icon"
-                ></i>
+                <div class="transition-all duration-300 faq-icon">
+                  <i data-lucide="plus"></i>
+                </div>
               </button>
               <div
                 class="faq-content px-10 pt-2 pb-10 text-gray-600 hidden max-w-[90%]"
@@ -736,10 +769,9 @@
                 <h3 class="font-bold text-xl">
                   What payment methods are supported?
                 </h3>
-                <i
-                  data-lucide="plus"
-                  class="transition-all duration-300 faq-icon"
-                ></i>
+                <div class="transition-all duration-300 faq-icon">
+                  <i data-lucide="plus"></i>
+                </div>
               </button>
               <div
                 class="faq-content px-10 pt-2 pb-10 text-gray-600 hidden max-w-[90%]"
@@ -756,10 +788,9 @@
                 <h3 class="font-bold text-xl">
                   Can I cancel or reschedule my booking?
                 </h3>
-                <i
-                  data-lucide="plus"
-                  class="transition-all duration-300 faq-icon"
-                ></i>
+                <div class="transition-all duration-300 faq-icon">
+                  <i data-lucide="plus"></i>
+                </div>
               </button>
               <div
                 class="faq-content px-10 pt-2 pb-10 text-gray-600 hidden max-w-[90%]"
@@ -776,10 +807,9 @@
                 <h3 class="font-bold text-xl">
                   Do you offer custom itineraries?
                 </h3>
-                <i
-                  data-lucide="plus"
-                  class="transition-all duration-300 faq-icon"
-                ></i>
+                <div class="transition-all duration-300 faq-icon">
+                  <i data-lucide="plus"></i>
+                </div>
               </button>
               <div
                 class="faq-content px-10 pt-2 pb-10 text-gray-600 hidden max-w-[90%]"
@@ -790,22 +820,50 @@
               </div>
             </div>
           </div>
+
+          <div class="flex items-center justify-center mt-10">
+            <button class="button button-primary">
+              <span>Our Support Center</span>
+              <i data-lucide="move-right" class="text-white"></i>
+            </button>
+
+            <button class="button text-black">
+              <span>Contact Us</span>
+              <i data-lucide="move-right" class="text-black"></i>
+            </button>
+          </div>
         </div>
       </section>
 
+      <!-- Subscribe -->
       <section class="py-20">
         <div class="container">
           <div class="w-[90%] mx-auto flex rounded-[32px] overflow-hidden">
-            <div class="w-1/2 flex flex-col justify-center px-16 py-20 bg-[#E3F0FF]">
-              <h4 class="text-3xl">
+            <div
+              class="w-1/2 flex flex-col justify-center px-16 py-20 bg-[#E3F0FF]"
+            >
+              <h4 class="text-3xl xl:text-4xl">
                 Subscribe to see secret deals prices drop the moment you sign
                 up!
               </h4>
-              
-              <form action="" class="mt-10 mb-">
-                <div class="flex rounded-full bg-white border border-[#E4E6E8] w-fit overflow-hidden">
-                  <input type="email" name="email" id="email" placeholder="Your Email" class="px-9 py-5">
-                  <button type="submit" class="px-9 py-5 text-sm bg-black text-white rounded-full">Subscribe</button>
+
+              <form action="" class="mt-10 mb-3">
+                <div
+                  class="relative flex rounded-full bg-white border border-[#E4E6E8] w-[90%] overflow-hidden"
+                >
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Your Email"
+                    class="px-9 py-5 focus:outline-none w-full"
+                  />
+                  <button
+                    type="submit"
+                    class="absolute right-0 top-0 bottom-0 px-9 py-5 bg-orange-500 text-white rounded-full"
+                  >
+                    Subscribe
+                  </button>
                 </div>
               </form>
               <p class="text-sm">No ads. No trails. No commitments</p>
@@ -814,11 +872,13 @@
               <img
                 src="assets/images/subscribe-image.png"
                 alt="image subscribe"
+                class="h-full object-cover"
               />
             </div>
           </div>
         </div>
       </section>
+      <!-- Subscribe -->
 
       <!-- Footer -->
       <footer class="bg-[#0A1E3F] text-white py-12">
@@ -826,11 +886,9 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <!-- Kiri: Logo + Deskripsi -->
             <div class="pr-8">
-              <div class="flex items-center gap-2 mb-4">
-                <!-- Dummy logo bulat -->
-                <div class="w-8 h-8 bg-white rounded-full"></div>
-                <h1 class="text-lg font-semibold">NomadVerse</h1>
-              </div>
+              <a href="#" class="mb-4 inline-block">
+                <img src="assets/images/logo-white.png" alt="logo footer" />
+              </a>
               <p class="text-sm text-gray-300 mb-6">
                 Welcome to NomadVerse, your go-to platform for hassle-free and
                 spontaneous travel journeys. We specialize in offering you quick
