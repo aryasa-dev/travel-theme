@@ -37,6 +37,10 @@ button {
   @apply text-slate-800;
 }
 
+.navbar-scrolled #menu-toggle {
+  @apply text-black
+}
+
 .rotate-icon {
   @apply rotate-45
 }
