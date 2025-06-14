@@ -3,61 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Discover your next travel story with NomadVerse." />
+    <meta name="author" content="NomadVerse" />
+    <meta name="keywords" content="travel, tourism, booking, vacation" />
+    <meta name="theme-color" content="#ffffff" />
+
     <title>NomadVerse – Discover Your Next Story</title>
-    <link href="./assets/css/output.css" rel="stylesheet" />
-    <link
-      rel="shortcut icon"
-      href="./assets/images/logo-icon.svg"
-      type="image/x-icon"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <!-- AOS CSS -->
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="./assets/images/logo-icon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link href="./assets/css/style.css" rel="stylesheet" />
+
+    <!-- Swiper js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Navbar -->
     <nav
-      class="fixed top-0 left-0 right-0 w-full z-30 flex justify-between items-center px-6 md:px-16 bg-transparent py-4"
+      class="fixed top-0 left-0 right-0 w-full z-30 flex justify-between items-center px-6 md:px-16 bg-transparent py-4 transition-all duration-300 ease-in-out"
       id="navbar"
+      role="navigation" 
+      aria-label="Main Navigation"
       data-aos="fade-up"
       data-aos-offset="500"
       data-aos-duration="500"
     >
-      <a href="#">
+      <a href="#" aria-label="Go to homepage">
         <img
           src="assets/images/logo.png"
-          alt="logo"
+          alt="NomadVerse Logo"
           class="logo-black hidden"
         />
-        <img src="assets/images/logo-white.png" alt="logo" class="logo-white" />
+        <img src="assets/images/logo-white.png" alt="NomadVerse Logo" class="logo-white" />
       </a>
       <!-- Desktop menu -->
       <ul class="hidden lg:flex gap-8 text-white font-semibold" id="nav-menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Destinations</a></li>
-        <li><a href="#">Packages</a></li>
-        <li><a href="#">About Us</a></li>
+        <li><a href="#" class="transition-all duration-300 hover:text-slate-800">Home</a></li>
+        <li><a href="#destinations" class="transition-all duration-300 hover:text-slate-800">Destinations</a></li>
+        <li><a href="#packages" class="transition-all duration-300 hover:text-slate-800">Packages</a></li>
+        <li><a href="#testimony" class="transition-all duration-300 hover:text-slate-800">Testimony</a></li>
+        <li><a href="#faq" class="transition-all duration-300 hover:text-slate-800">FAQ</a></li>
       </ul>
 
       <div class="flex items-center gap-4">
-        <!-- <button class="text-white font-semibold">Login</button> -->
         <button
-          class="bg-sky-600 text-white px-5 py-2 font-semibold rounded-full hover:bg-sky-700"
+          class="hidden sm:block bg-sky-600 text-white px-5 py-2 font-semibold rounded-full hover:bg-sky-700"
         >
           Register
         </button>
 
         <!-- Mobile hamburger -->
         <div class="lg:hidden">
-          <button id="menu-toggle" class="text-white">
-            <i data-lucide="menu"></i>
+          <button id="menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobile-menu" class="text-white">
+            <i data-lucide="menu" aria-hidden="true"></i>
           </button>
         </div>
       </div>
@@ -65,16 +73,21 @@
       <!-- Mobile menu -->
       <div
         id="mobile-menu"
-        class="lg:hidden bg-white text-gray-800 px-6 pb-6 pt-10 hidden fixed top-[68px] left-0 right-0 w-[90%] mx-auto shadow z-20"
+        class="lg:hidden hidden fixed top-[68px] left-0 right-0 w-[90%] mx-auto z-20 bg-white px-6 pb-6 pt-10
+         transform transition duration-300 ease-in-out translate-y-[-20px] opacity-0"
+        role="region" 
+        aria-label="Mobile Navigation Menu" 
+        
       >
         <ul class="flex flex-col items-start gap-4 font-semibold">
           <li><a href="#">Home</a></li>
-          <li><a href="#">Destinations</a></li>
-          <li><a href="#">Packages</a></li>
-          <li><a href="#">About Us</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#testimony">Testimony</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li>
             <button
-              class="bg-sky-600 text-white px-4 py-2 font-semibold rounded-full hover:bg-sky-700 w-full"
+              class="block sm:hidden bg-sky-600 text-white px-4 py-2 font-semibold rounded-full hover:bg-sky-700 w-full"
             >
               Register
             </button>
@@ -82,8 +95,10 @@
         </ul>
       </div>
     </nav>
+    <!-- End Navbar -->
 
     <main>
+      <!-- Hero Section -->
       <section
         class="relative min-h-screen text-center py-20 px-6 md:px-0 overflow-hidden flex flex-col place-content-center"
       >
@@ -103,7 +118,8 @@
             data-aos="fade-up"
             data-aos-duration="500"
           >
-            Inspiring Explorations<br />and Endless Possibilities
+            <span class="block">Inspiring Explorations</span>
+            <span class="block">and Endless Possibilities</span>
           </h1>
           <p
             class="text-lg text-slate-600 mb-10"
@@ -116,8 +132,10 @@
           </p>
 
           <!-- Booking Form -->
-          <div
+          <form
             class="bg-white rounded-3xl lg:rounded-full shadow-lg p-4 lg:p-5 flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap items-center gap-3 lg:gap-6 justify-center max-w-2xl lg:max-w-3xl mx-auto mt-20 md:mt-40"
+            role="form"
+            aria-label="Booking Form"
             data-aos="fade-up"
             data-aos-duration="700"
           >
@@ -129,12 +147,14 @@
                 <i
                   data-lucide="map-pin"
                   class="w-4 h-4 lg:w-5 lg:h-5 text-sky-600"
-                ></i>
+                 aria-hidden="true"></i>
               </div>
               <div class="flex flex-col items-start w-full">
                 <label class="text-slate-500 text-xs">Destinations</label>
                 <select
                   class="bg-transparent font-semibold outline-none w-full sm:w-auto"
+                  id="destinations"
+                  name="destinations"
                 >
                   <option>Kintamani</option>
                   <option>Bali</option>
@@ -151,7 +171,7 @@
                 <i
                   data-lucide="calendar"
                   class="w-4 h-4 lg:w-5 lg:h-5 text-sky-600"
-                ></i>
+                 aria-hidden="true"></i>
               </div>
               <div class="flex flex-col items-start w-full">
                 <label class="text-slate-500 text-xs">Date</label>
@@ -159,6 +179,8 @@
                   type="date"
                   class="bg-transparent font-semibold outline-none w-full sm:w-auto"
                   value="2023-08-17"
+                  id="date"
+                  name="travel-date"
                 />
               </div>
             </div>
@@ -171,12 +193,14 @@
                 <i
                   data-lucide="user"
                   class="w-4 h-4 lg:w-5 lg:h-5 text-sky-600"
-                ></i>
+                 aria-hidden="true"></i>
               </div>
               <div class="flex flex-col items-start w-full">
                 <label class="text-slate-500 text-xs">People</label>
                 <select
                   class="bg-transparent font-semibold outline-none w-full sm:w-auto"
+                  id="people"
+                  name="people"
                 >
                   <option>Adult 2</option>
                   <option>Adult 1</option>
@@ -188,33 +212,35 @@
             <!-- Button -->
             <button
               class="w-full sm:w-auto flex justify-center items-center gap-x-3 bg-slate-800 hover:bg-slate-700 text-white pr-2 pl-6 py-2 rounded-full font-semibold"
+              type="button"
             >
               Book your trip
               <div class="bg-orange-500 rounded-full p-2">
-                <i data-lucide="move-right" class="text-white w-4 h-4"></i>
+                <i data-lucide="move-right" class="text-white w-4 h-4" aria-hidden="true"></i>
               </div>
             </button>
-          </div>
+          </form>
         </div>
       </section>
-
-      <section class="bg-white py-20">
+      <!-- End Hero Section -->
+      
+      <!-- Destinations Section -->
+      <section class="bg-white py-20" id="destinations" role="region" aria-labelledby="section-explore-title">
         <div class="container">
           <!-- Heading -->
           <div class="text-center md:text-left mb-12">
             <h2
               class="text-4xl md:text-5xl font-extrabold text-slate-800 leading-snug"
+              id="section-explore-title"
               data-aos="fade-up"
               data-aos-duration="500"
             >
-              Explore
+              <span class="inline-block">Explore</span>
               <span class="relative inline-block">
                 <span class="z-10 relative">Our Most</span>
-                <span
-                  class="absolute left-0 bottom-1 h-2 w-full bg-orange-300 rounded z-0"
-                ></span> </span
-              ><br />
-              Coveted NomadVerse Destinations
+                <span class="absolute left-0 bottom-1 h-2 w-full bg-orange-300 rounded z-0"></span>
+              </span>
+              <span class="block">Coveted NomadVerse Destinations</span>
             </h2>
             <p
               class="text-slate-500 mt-4 mb-6"
@@ -228,20 +254,24 @@
               class="button button-primary"
               data-aos="fade-up"
               data-aos-duration="700"
+              type="button"
             >
-              <i data-lucide="compass" class="w-5 h-5"></i>
+              <i data-lucide="compass" class="w-5 h-5" aria-hidden="true"></i>
               <span>Let’s Start your Trip</span>
             </button>
           </div>
 
           <!-- Filters -->
-          <div
+          <form
             class="flex flex-nowrap justify-end gap-2 md:gap-4 my-6"
             data-aos="fade-up"
             data-aos-duration="700"
+            aria-label="Destination Filter"
           >
             <div class="relative inline-block">
               <select
+                id="category-filter"
+                name="category"
                 class="appearance-none bg-gray-100 text-slate-600 px-5 py-2 pr-10 rounded-full text-sm focus:outline-none"
               >
                 <option disabled selected>Categories</option>
@@ -254,12 +284,14 @@
               <div
                 class="pointer-events-none absolute top-1/2 right-2 -translate-y-1/2"
               >
-                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                <i data-lucide="chevron-down" class="w-5 h-5" aria-hidden="true"></i>
               </div>
             </div>
             <div class="relative inline-block">
               <select
                 class="appearance-none bg-gray-100 text-slate-600 px-5 py-2 pr-10 rounded-full text-sm focus:outline-none"
+                id="review-filter"
+                name="review"
               >
                 <option disabled selected>Review / Rating</option>
                 <option>5 Stars</option>
@@ -271,12 +303,14 @@
               <div
                 class="pointer-events-none absolute top-1/2 right-2 -translate-y-1/2"
               >
-                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                <i data-lucide="chevron-down" class="w-5 h-5" aria-hidden="true"></i>
               </div>
             </div>
             <div class="relative inline-block">
               <select
                 class="appearance-none bg-gray-100 text-slate-600 px-5 py-2 pr-10 rounded-full text-sm focus:outline-none"
+                id="price filter"
+                name="price"
               >
                 <option disabled selected>Price range</option>
                 <option>$0 - $50</option>
@@ -288,17 +322,17 @@
               <div
                 class="pointer-events-none absolute top-1/2 right-2 -translate-y-1/2"
               >
-                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                <i data-lucide="chevron-down" class="w-5 h-5" aria-hidden="true"></i>
               </div>
             </div>
-          </div>
+          </form>
 
           <!-- Cards with staggered layout -->
           <div
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:items-start gap-6 relative mt-10"
           >
             <!-- Card 1 -->
-            <div
+            <article
               class="relative bg-white shadow-md rounded-xl overflow-hidden"
               data-aos="fade-up"
               data-aos-duration="500"
@@ -314,13 +348,14 @@
                 <div
                   class="w-8 h-8 bg-white flex items-center justify-center rounded-full p-1"
                 >
-                  <i data-lucide="heart" class="w-5 h-5"></i>
+                  <i data-lucide="heart" class="w-5 h-5" aria-hidden="true"></i>
                 </div>
               </div>
               <img
                 src="assets/images/dest-img1.jpg"
                 alt="Destination"
                 class="w-full h-60 object-cover"
+                loading="lazy"
               />
               <div class="px-8 py-10">
                 <h3 class="font-bold text-2xl text-slate-800">Kintamani</h3>
@@ -328,26 +363,26 @@
                   <i
                     data-lucide="star"
                     class="w-4 h-4 fill-yellow-500 stroke-yellow-500"
-                  ></i>
+                   aria-hidden="true"></i>
                   <span class="font-semibold">4.88</span>
                   <span class="font-medium text-gray-400">(700 reviews)</span>
                 </div>
                 <div
                   class="flex items-center text-sm text-slate-500 mt-2 gap-1"
                 >
-                  <i data-lucide="map-pin" class="w-4 h-4"></i> Bali, Indonesia
+                  <i data-lucide="map-pin" class="w-4 h-4" aria-hidden="true"></i> Bali, Indonesia
                 </div>
                 <div class="flex items-center justify-between mt-2">
                   <div class="text-slate-800 font-semibold text-lg">
                     $100 <span class="text-sm text-slate-500">/Person</span>
                   </div>
-                  <button class="button button-secondary">Book Now</button>
+                  <button class="button button-secondary" type="button">Book Now</button>
                 </div>
               </div>
-            </div>
+            </article>
 
             <!-- Card 2 -->
-            <div
+            <article
               class="relative bg-white shadow-md rounded-xl overflow-hidden"
               data-aos="fade-up"
               data-aos-duration="600"
@@ -363,13 +398,14 @@
                 <div
                   class="w-8 h-8 bg-white flex items-center justify-center rounded-full p-1"
                 >
-                  <i data-lucide="heart" class="w-5 h-5"></i>
+                  <i data-lucide="heart" class="w-5 h-5" aria-hidden="true"></i>
                 </div>
               </div>
               <img
                 src="assets/images/dest-img2.jpg"
                 alt="Destination"
                 class="w-full h-60 object-cover"
+                loading="lazy"
               />
               <div class="px-8 py-10">
                 <h3 class="font-bold text-2xl text-slate-800">Nusa Penida</h3>
@@ -377,26 +413,26 @@
                   <i
                     data-lucide="star"
                     class="w-4 h-4 fill-yellow-500 stroke-yellow-500"
-                  ></i>
+                   aria-hidden="true"></i>
                   <span class="font-semibold">4.88</span>
                   <span class="font-medium text-gray-400">(700 reviews)</span>
                 </div>
                 <div
                   class="flex items-center text-sm text-slate-500 mt-2 gap-1"
                 >
-                  <i data-lucide="map-pin" class="w-4 h-4"></i> Bali, Indonesia
+                  <i data-lucide="map-pin" class="w-4 h-4" aria-hidden="true"></i> Bali, Indonesia
                 </div>
                 <div class="flex items-center justify-between mt-2">
                   <div class="text-slate-800 font-semibold text-lg">
                     $150 <span class="text-sm text-slate-500">/Person</span>
                   </div>
-                  <button class="button button-secondary">Book Now</button>
+                  <button class="button button-secondary" type="button">Book Now</button>
                 </div>
               </div>
-            </div>
+            </article>
 
             <!-- Card 3 -->
-            <div
+            <article
               class="relative bg-white shadow-md rounded-xl overflow-hidden"
               data-aos="fade-up"
               data-aos-duration="700"
@@ -412,13 +448,14 @@
                 <div
                   class="w-8 h-8 bg-white flex items-center justify-center rounded-full p-1"
                 >
-                  <i data-lucide="heart" class="w-5 h-5"></i>
+                  <i data-lucide="heart" class="w-5 h-5" aria-hidden="true"></i>
                 </div>
               </div>
               <img
                 src="assets/images/dest-img3.jpg"
                 alt="Destination"
                 class="w-full h-60 object-cover"
+                loading="lazy"
               />
               <div class="px-8 py-10">
                 <h3 class="font-bold text-2xl text-slate-800">Broken Beach</h3>
@@ -426,29 +463,30 @@
                   <i
                     data-lucide="star"
                     class="w-4 h-4 fill-yellow-500 stroke-yellow-500"
-                  ></i>
+                   aria-hidden="true"></i>
                   <span class="font-semibold">4.88</span>
                   <span class="font-medium text-gray-400">(700 reviews)</span>
                 </div>
                 <div
                   class="flex items-center text-sm text-slate-500 mt-2 gap-1"
                 >
-                  <i data-lucide="map-pin" class="w-4 h-4"></i> Bali, Indonesia
+                  <i data-lucide="map-pin" class="w-4 h-4" aria-hidden="true"></i> Bali, Indonesia
                 </div>
                 <div class="flex items-center justify-between mt-2">
                   <div class="text-slate-800 font-semibold text-lg">
                     $200 <span class="text-sm text-slate-500">/Person</span>
                   </div>
-                  <button class="button button-secondary">Book Now</button>
+                  <button class="button button-secondary" type="button">Book Now</button>
                 </div>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
+      <!-- End Destinations Section -->
 
-      <!-- Why NomadVerse -->
-      <section class="bg-white py-20">
+      <!-- Why NomadVerse Section -->
+      <section class="bg-white py-20" id="why-nomadverse" role="region" aria-labelledby="why-nomadverse-heading">
         <div class="container">
           <div class="grid grid-cols-1 md:grid-cols-2 items-start">
             <div class="pr-10 lg:pr-40">
@@ -457,9 +495,9 @@
                 data-aos="fade-up"
                 data-aos-duration="500"
               >
-                Why<br />
+                <span class="block">Why</span>
                 <span class="relative inline-block">
-                  <span class="z-10 relative">NomadVerse?</span>
+                  <span class="z-10 relative inline-block">NomadVerse?</span>
                   <span
                     class="absolute left-0 bottom-1 h-2 w-full bg-orange-300 rounded z-0"
                   ></span>
@@ -481,17 +519,17 @@
                 <a href="#"
                   ><img
                     src="assets/images/googleplay.png"
-                    alt="googleplay image"
+                    alt="Download on Google Play"
                 /></a>
                 <a href="#"
-                  ><img src="assets/images/appstore.png" alt="appstore image"
+                  ><img src="assets/images/appstore.png" alt="Download on App Store"
                 /></a>
               </div>
             </div>
 
             <!-- Right Column: Boxes -->
             <div class="flex items-center flex-wrap gap-4 mt-10 md:mt-0">
-              <div
+              <article
                 class="bg-red-50 p-7 lg:p-9 flex flex-col items-center text-center gap-y-3 rounded-xl w-full sm:w-[45%] lg:w-[40%]"
                 data-aos="fade-up"
                 data-aos-duration="500"
@@ -499,7 +537,7 @@
                 <div
                   class="w-10 h-10 flex items-center justify-center shadow-sm bg-white rounded-full"
                 >
-                  <i data-lucide="globe"></i>
+                  <i data-lucide="globe" aria-hidden="true"></i>
                 </div>
                 <h3 class="font-semibold text-md lg:text-xl">
                   300,000+ Experiences
@@ -507,8 +545,8 @@
                 <p class="text-gray-500 text-sm lg:text-base">
                   Make memories around the world.
                 </p>
-              </div>
-              <div
+              </article>
+              <article
                 class="bg-blue-50 p-7 lg:p-9 flex flex-col items-center text-center gap-y-3 rounded-xl w-full sm:w-[45%] lg:w-[40%] lg:-mt-24"
                 data-aos="fade-up"
                 data-aos-duration="600"
@@ -516,7 +554,7 @@
                 <div
                   class="w-10 h-10 flex items-center justify-center shadow-sm bg-white rounded-full"
                 >
-                  <i data-lucide="briefcase"></i>
+                  <i data-lucide="briefcase" aria-hidden="true"></i>
                 </div>
                 <h3 class="font-semibold text-md lg:text-xl">
                   Trusted Reviews
@@ -524,8 +562,8 @@
                 <p class="text-gray-500 text-sm lg:text-base">
                   4.8 stars from 160,000+ Trustpilot reviews.
                 </p>
-              </div>
-              <div
+              </article>
+              <article
                 class="bg-indigo-50 p-7 lg:p-9 flex flex-col items-center text-center gap-y-3 rounded-xl w-full sm:w-[45%] lg:w-[40%]"
                 data-aos="fade-up"
                 data-aos-duration="700"
@@ -533,7 +571,7 @@
                 <div
                   class="w-10 h-10 flex items-center justify-center shadow-sm bg-white rounded-full"
                 >
-                  <i data-lucide="plane"></i>
+                  <i data-lucide="plane" aria-hidden="true"></i>
                 </div>
                 <h3 class="font-semibold text-md lg:text-xl">
                   Reserve now, Pay later
@@ -541,8 +579,8 @@
                 <p class="text-gray-500 text-sm lg:text-base">
                   Book your spot first, pay later.
                 </p>
-              </div>
-              <div
+              </article>
+              <article
                 class="bg-gray-100 p-7 lg:p-9 flex flex-col items-center text-center gap-y-3 rounded-xl w-full sm:w-[45%] lg:w-[40%] lg:-mt-16"
                 data-aos="fade-up"
                 data-aos-duration="800"
@@ -550,7 +588,7 @@
                 <div
                   class="w-10 h-10 flex items-center justify-center shadow-sm bg-white rounded-full"
                 >
-                  <i data-lucide="shield-check"></i>
+                  <i data-lucide="shield-check" aria-hidden="true"></i>
                 </div>
                 <h3 class="font-semibold text-md lg:text-xl">
                   Security Assurance
@@ -558,16 +596,17 @@
                 <p class="text-gray-500 text-sm lg:text-base">
                   Data security through encryption
                 </p>
-              </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
-      <!-- Why NomadVerse -->
+      <!-- End Why NomadVerse Section -->
 
-      <!-- Stats -->
-      <section class="py-20">
+      <!-- Stats Section -->
+      <section class="py-20" id="stats">
         <div class="container">
+          <h2 class="sr-only">Company Statistics</h2>
           <div
             class="relative h-52 lg:h-72 flex justify-center items-center overflow-hidden"
             data-aos="fade-up"
@@ -576,58 +615,62 @@
             <img
               src="assets/images/bg-stats.png"
               alt="background stats"
+              role="presentation"
+              aria-hidden="true"
               class="absolute -z-10 inset-0 mx-auto h-full object-cover md:object-contain rounded-lg"
             />
 
             <!-- Stats Content -->
             <div
               class="flex items-center flex-wrap md:flex-nowrap gap-y-3 md:gap-5 lg:gap-8"
+              role="group"
+              aria-label="Company statistics"
               data-aos="fade-up"
               data-aos-duration="600"
             >
               <div class="w-1/2 md:w-auto text-center">
-                <h4 class="text-2xl lg:text-5xl text-white font-extrabold">
+                <dt class="text-2xl lg:text-5xl text-white font-extrabold">
                   100k
-                </h4>
-                <p class="font-semibold text-lg lg:text-xl text-white">
+                </dt>
+                <dd class="font-semibold text-lg lg:text-xl text-white">
                   Happy Client
-                </p>
+                </dd>
               </div>
               <div class="bg-white w-[1px] h-10 lg:h-14 hidden md:block"></div>
               <div class="w-1/2 md:w-auto text-center">
-                <h4 class="text-2xl lg:text-5xl text-white font-extrabold">
+                <dt class="text-2xl lg:text-5xl text-white font-extrabold">
                   +50k
-                </h4>
-                <p class="font-semibold text-lg lg:text-xl text-white">
+                </dt>
+                <dd class="font-semibold text-lg lg:text-xl text-white">
                   Destinations
-                </p>
+                </dd>
               </div>
               <div class="bg-white w-[1px] h-10 lg:h-14 hidden md:block"></div>
               <div class="w-1/2 md:w-auto text-center">
-                <h4 class="text-2xl lg:text-5xl text-white font-extrabold">
+                <dt class="text-2xl lg:text-5xl text-white font-extrabold">
                   +36
-                </h4>
-                <p class="font-semibold text-lg lg:text-xl text-white">
+                </dt>
+                <dd class="font-semibold text-lg lg:text-xl text-white">
                   Global Branch
-                </p>
+                </dd>
               </div>
               <div class="bg-white w-[1px] h-10 lg:h-14 hidden md:block"></div>
               <div class="w-1/2 md:w-auto text-center">
-                <h4 class="text-2xl lg:text-5xl text-white font-extrabold">
+                <dt class="text-2xl lg:text-5xl text-white font-extrabold">
                   +22k
-                </h4>
-                <p class="font-semibold text-lg lg:text-xl text-white">
+                </dt>
+                <dd class="font-semibold text-lg lg:text-xl text-white">
                   Campaigns
-                </p>
+                </dd>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <!-- Stats -->
+      <!-- End Stats Section -->
 
-      <!-- Package -->
-      <section class="py-20 bg-[url('/assets/images/bg-package.png')] bg-cover">
+      <!-- Package Section -->
+      <section class="py-20 bg-[url('/assets/images/bg-package.png')] bg-cover" id="packages" aria-label="Travel Packages">
         <div class="container">
           <div class="lg:max-w-[35%] mx-auto text-center">
             <h2
@@ -655,7 +698,7 @@
             class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20"
           >
             <!-- Card 1 -->
-            <div
+            <article
               class="bg-blue-50 rounded-2xl p-8 shadow-sm flex flex-col justify-between"
               data-aos="fade-up"
               data-aos-duration="500"
@@ -672,7 +715,7 @@
                     <div
                       class="w-4 h-4 bg-slate-800 rounded-full flex items-center justify-center"
                     >
-                      <i data-lucide="check" class="text-white w-3 h-3"></i>
+                      <i data-lucide="check" class="text-white w-3 h-3" aria-hidden="true"></i>
                     </div>
                     <p>Guided Mountain Trek</p>
                   </li>
@@ -680,7 +723,7 @@
                     <div
                       class="w-4 h-4 bg-slate-800 rounded-full flex items-center justify-center"
                     >
-                      <i data-lucide="check" class="text-white w-3 h-3"></i>
+                      <i data-lucide="check" class="text-white w-3 h-3" aria-hidden="true"></i>
                     </div>
                     <p>White-Water Rafting</p>
                   </li>
@@ -688,7 +731,7 @@
                     <div
                       class="w-4 h-4 bg-slate-800 rounded-full flex items-center justify-center"
                     >
-                      <i data-lucide="check" class="text-white w-3 h-3"></i>
+                      <i data-lucide="check" class="text-white w-3 h-3" aria-hidden="true"></i>
                     </div>
                     <p>Camping Under The Stars</p>
                   </li>
@@ -697,12 +740,12 @@
               <button
                 class="border text-gray-900 border-gray-800 rounded-md p-4 font-semibold hover:bg-gray-800 hover:text-white"
               >
-                Book Your Adventure Now
+                Book the Adventure Package
               </button>
-            </div>
+            </article>
 
             <!-- Card 2 (Featured) -->
-            <div
+            <article
               class="bg-gray-900 text-white rounded-2xl p-8 shadow-sm flex flex-col justify-between"
               data-aos="fade-up"
               data-aos-duration="700"
@@ -721,7 +764,7 @@
                     <div
                       class="w-4 h-4 bg-white rounded-full flex items-center justify-center"
                     >
-                      <i data-lucide="check" class="text-slate-800 w-3 h-3"></i>
+                      <i data-lucide="check" class="text-slate-800 w-3 h-3" aria-hidden="true"></i>
                     </div>
                     <p>Guided City Tours</p>
                   </li>
@@ -729,7 +772,7 @@
                     <div
                       class="w-4 h-4 bg-white rounded-full flex items-center justify-center"
                     >
-                      <i data-lucide="check" class="text-slate-800 w-3 h-3"></i>
+                      <i data-lucide="check" class="text-slate-800 w-3 h-3" aria-hidden="true"></i>
                     </div>
                     <p>Traditional Cooking Classes</p>
                   </li>
@@ -737,7 +780,7 @@
                     <div
                       class="w-4 h-4 bg-white rounded-full flex items-center justify-center"
                     >
-                      <i data-lucide="check" class="text-slate-800 w-3 h-3"></i>
+                      <i data-lucide="check" class="text-slate-800 w-3 h-3" aria-hidden="true"></i>
                     </div>
                     <p>Cultural Performances</p>
                   </li>
@@ -746,12 +789,12 @@
               <button
                 class="border bg-white text-slate-900 border-white rounded-md p-4 font-semibold hover:bg-white/90"
               >
-                Book Your Cultural Now
+                Book Cultural Discovery
               </button>
-            </div>
+            </article>
 
             <!-- Card 3 -->
-            <div
+            <article
               class="bg-blue-50 rounded-2xl p-8 shadow-sm flex flex-col justify-between"
               data-aos="fade-up"
               data-aos-duration="900"
@@ -768,7 +811,7 @@
                     <div
                       class="w-4 h-4 bg-slate-800 rounded-full flex items-center justify-center"
                     >
-                      <i data-lucide="check" class="text-white w-3 h-3"></i>
+                      <i data-lucide="check" class="text-white w-3 h-3" aria-hidden="true"></i>
                     </div>
                     <p>Spa Retreat</p>
                   </li>
@@ -776,7 +819,7 @@
                     <div
                       class="w-4 h-4 bg-slate-800 rounded-full flex items-center justify-center"
                     >
-                      <i data-lucide="check" class="text-white w-3 h-3"></i>
+                      <i data-lucide="check" class="text-white w-3 h-3" aria-hidden="true"></i>
                     </div>
                     <p>Beachside Relaxation</p>
                   </li>
@@ -784,7 +827,7 @@
                     <div
                       class="w-4 h-4 bg-slate-800 rounded-full flex items-center justify-center"
                     >
-                      <i data-lucide="check" class="text-white w-3 h-3"></i>
+                      <i data-lucide="check" class="text-white w-3 h-3" aria-hidden="true"></i>
                     </div>
                     <p>Yoga And Meditation Sessions</p>
                   </li>
@@ -793,16 +836,16 @@
               <button
                 class="border text-gray-900 border-gray-800 rounded-md p-4 font-semibold hover:bg-gray-800 hover:text-white"
               >
-                Book Your Adventure Now
+                Book a Relaxing Retreat
               </button>
-            </div>
+            </article>
           </div>
         </div>
       </section>
-      <!-- Package -->
+      <!-- End Package Section -->
 
-      <!-- Testimoni Section -->
-      <section class="py-20">
+      <!-- Testimony Section -->
+      <section class="py-20" id="testimony" aria-label="Customer Testimonials">
         <div class="container">
           <div class="max-w-4xl mx-auto text-center">
             <h2
@@ -816,19 +859,20 @@
                   class="absolute left-0 bottom-1 h-1 md:h-2 w-full bg-orange-300 rounded z-0"
                 ></span>
               </span>
-              <br />
-              Explorers
+              <span class="block">Explorers</span>
             </h2>
           </div>
 
+          <!-- Swiper Carousel -->
           <div
             class="swiper mySwiper max-w-5xl mx-auto !mt-10 !pb-16"
             data-aos="fade-up"
             data-aos-duration="600"
           >
             <div class="swiper-wrapper">
-              <!-- Slide 1 -->
-              <div class="swiper-slide">
+              <!-- Testimonial Slide -->
+              <!-- Repeatable Testimonial Card -->
+              <article class="swiper-slide" aria-label="Testimonial from User">
                 <div
                   class="bg-[#E4F9F9] rounded-xl p-6 shadow-md h-full flex flex-col justify-between"
                 >
@@ -853,12 +897,12 @@
                     the best way possible, and I came back with stories that
                     I’ll tell for years to come”
                   </p>
-                  <div class="text-xs text-gray-500">~ 16 Aug, 2023</div>
+                  <p class="text-xs text-gray-500">~ 16 Aug, 2023</p>
                 </div>
-              </div>
+              </article>
 
               <!-- Slide 2 -->
-              <div class="swiper-slide">
+              <article class="swiper-slide" aria-label="Testimonial from User">
                 <div
                   class="bg-[#E4F9F9] rounded-xl p-6 shadow-md h-full flex flex-col justify-between"
                 >
@@ -882,9 +926,9 @@
                   </p>
                   <div class="text-xs text-gray-500">~ 21 Aug, 2023</div>
                 </div>
-              </div>
+              </article>
               <!-- Slide 3 -->
-              <div class="swiper-slide">
+              <article class="swiper-slide" aria-label="Testimonial from User">
                 <div
                   class="bg-[#E4F9F9] rounded-xl p-6 shadow-md h-full flex flex-col justify-between"
                 >
@@ -911,10 +955,10 @@
                   </p>
                   <div class="text-xs text-gray-500">~ 16 Aug, 2023</div>
                 </div>
-              </div>
+              </article>
 
               <!-- Slide 4 -->
-              <div class="swiper-slide">
+              <article class="swiper-slide" aria-label="Testimonial from User">
                 <div
                   class="bg-[#E4F9F9] rounded-xl p-6 shadow-md h-full flex flex-col justify-between"
                 >
@@ -938,7 +982,7 @@
                   </p>
                   <div class="text-xs text-gray-500">~ 21 Aug, 2023</div>
                 </div>
-              </div>
+              </article>
             </div>
 
             <!-- Dots Pagination -->
@@ -946,13 +990,15 @@
           </div>
         </div>
       </section>
-      <!-- Testimoni Section -->
+      <!-- End Testimony Section -->
 
-      <section class="py-20">
+      <!-- FAQ Section -->
+      <section class="py-20" id="faq" aria-labelledby="faq-heading">
         <div class="container">
           <div class="max-w-4xl mx-auto text-center">
             <h2
               class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-800 leading-snug mb-3"
+              id="faq-heading"
               data-aos="fade-up"
               data-aos-duration="500"
             >
@@ -982,16 +1028,18 @@
             >
               <button
                 class="w-full text-left p-6 md:p-10 font-semibold text-gray-800 flex justify-between items-center faq-toggle"
+                aria-expanded="false"
+                aria-controls="faq1"
+                type="button"
               >
-                <h3 class="font-bold text-xl">
+                <span class="font-bold text-xl">
                   How do I book a trip on NomadVerse?
-                </h3>
-                <div class="transition-all duration-300 faq-icon">
-                  <i data-lucide="plus"></i>
-                </div>
+                </span>
+                <i data-lucide="plus" aria-hidden="true" class="faq-icon transition-all duration-300"></i>
               </button>
               <div
                 class="faq-content px-6 md:px-10 pt-2 pb-6 md:pb-10 text-gray-600 hidden max-w-[90%]"
+                id="faq1"
               >
                 You can explore our destination cards, choose your favorite, and
                 click “Book Now”. Complete the booking form and payment to
@@ -1006,16 +1054,18 @@
             >
               <button
                 class="w-full text-left p-6 md:p-10 font-semibold text-gray-800 flex justify-between items-center faq-toggle"
+                aria-expanded="false"
+                aria-controls="faq2"
+                type="button"
               >
-                <h3 class="font-bold text-xl">
+                <span class="font-bold text-xl">
                   What payment methods are supported?
-                </h3>
-                <div class="transition-all duration-300 faq-icon">
-                  <i data-lucide="plus"></i>
-                </div>
+                </span>
+                <i data-lucide="plus" class="faq-icon transition-all duration-300" aria-hidden="true"></i>
               </button>
               <div
                 class="faq-content px-6 md:px-10 pt-2 pb-6 md:pb-10 text-gray-600 hidden max-w-[90%]"
+                id="faq2"
               >
                 We accept all major debit and credit cards, PayPal, and other
                 local payment gateways depending on your region.
@@ -1029,16 +1079,18 @@
             >
               <button
                 class="w-full text-left p-6 md:p-10 font-semibold text-gray-800 flex justify-between items-center faq-toggle"
+                aria-expanded="false"
+                aria-controls="faq3"
+                type="button"
               >
-                <h3 class="font-bold text-xl">
+                <span class="font-bold text-xl">
                   Can I cancel or reschedule my booking?
-                </h3>
-                <div class="transition-all duration-300 faq-icon">
-                  <i data-lucide="plus"></i>
-                </div>
+                </span>
+                <i data-lucide="plus" class="faq-icon transition-all duration-300" aria-hidden="true"></i>
               </button>
               <div
                 class="faq-content px-6 md:px-10 pt-2 pb-6 md:pb-10 text-gray-600 hidden max-w-[90%]"
+                id="faq3"
               >
                 Yes, you can cancel or reschedule up to 48 hours in advance.
                 Refer to our terms for specific policy details.
@@ -1052,16 +1104,18 @@
             >
               <button
                 class="w-full text-left p-6 md:p-10 font-semibold text-gray-800 flex justify-between items-center faq-toggle"
+                aria-expanded="false"
+                aria-controls="faq4"
+                type="button"
               >
-                <h3 class="font-bold text-xl">
+                <span class="font-bold text-xl">
                   Do you offer custom itineraries?
-                </h3>
-                <div class="transition-all duration-300 faq-icon">
-                  <i data-lucide="plus"></i>
-                </div>
+                </span>
+                <i data-lucide="plus" class="faq-icon transition-all duration-300" aria-hidden="true"></i>
               </button>
               <div
                 class="faq-content px-6 md:px-10 pt-2 pb-6 md:pb-10 text-gray-600 hidden max-w-[90%]"
+                id="faq4"
               >
                 Yes, we can help you create a custom itinerary tailored to your
                 travel preferences and budget. Contact our support team to get
@@ -1077,19 +1131,20 @@
           >
             <button class="button button-primary">
               <span>Our Support Center</span>
-              <i data-lucide="move-right" class="text-white"></i>
+              <i data-lucide="move-right" class="text-white" aria-hidden="true"></i>
             </button>
 
             <button class="button text-black">
               <span>Contact Us</span>
-              <i data-lucide="move-right" class="text-black"></i>
+              <i data-lucide="move-right" class="text-black" aria-hidden="true"></i>
             </button>
           </div>
         </div>
       </section>
+      <!-- End FAQ Section -->
 
       <!-- Subscribe -->
-      <section class="py-20">
+      <section class="py-20" id="subscribe" aria-labelledby="subscribe-heading">
         <div class="container">
           <div
             class="w-[90%] mx-auto flex flex-col-reverse md:flex-row rounded-[32px] overflow-hidden"
@@ -1099,16 +1154,18 @@
             <div
               class="w-full md:w-1/2 flex flex-col justify-center px-6 md:px-10 lg:px-16 py-8 md:py-14 lg:py-20 bg-[#E3F0FF]"
             >
-              <h4
+              <h2
                 class="text-xl md:text-3xl xl:text-4xl"
+                id="subscribe-heading"
                 data-aos="fade-up"
                 data-aos-duration="600"
               >
                 Subscribe to see secret deals prices drop the moment you sign
                 up!
-              </h4>
+              </h2>
 
-              <form action="" class="mt-10 mb-3">
+              <form action="#" method="post" class="mt-10 mb-3" aria-label="Subscription Form">
+                <label for="email" class="sr-only">Email address</label>
                 <div
                   class="relative flex rounded-full bg-white border border-[#E4E6E8] w-full max-xl:w-[90%] overflow-hidden"
                   data-aos="fade-up"
@@ -1119,7 +1176,10 @@
                     name="email"
                     id="email"
                     placeholder="Your Email"
+                    required
                     class="px-5 lg:px-9 py-3 lg:py-5 focus:outline-none w-full text-xs md:text-base"
+                    aria-required="true"
+                    aria-describedby="subscribe-desc"
                   />
                   <button
                     type="submit"
@@ -1140,7 +1200,7 @@
             <div class="w-full md:w-1/2">
               <img
                 src="assets/images/subscribe-image.webp"
-                alt="image subscribe"
+                alt="subscribing to travel deals"
                 class="h-full object-cover w-full lg:w-auto"
                 data-aos="zoom-in"
                 data-aos-duration="600"
@@ -1149,10 +1209,10 @@
           </div>
         </div>
       </section>
-      <!-- Subscribe -->
+      <!-- End Subscribe -->
 
       <!-- Footer -->
-      <footer class="bg-[#0A1E3F] text-white py-12">
+      <footer class="bg-blue-950 text-white py-12" aria-label="Site Footer">
         <div class="container">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div class="pr-8">
@@ -1162,7 +1222,7 @@
                 data-aos="fade-up"
                 data-aos-duration="500"
               >
-                <img src="assets/images/logo-white.png" alt="logo footer" />
+                <img src="assets/images/logo-white.png" alt="NomadVerse Logo" />
               </a>
               <p
                 class="text-sm text-gray-300 mb-6"
@@ -1176,14 +1236,14 @@
               <div data-aos="fade-up" data-aos-duration="700">
                 <p class="text-sm text-gray-400">Contact Us →</p>
                 <a
-                  href="mailto:info@NomadVersecom"
+                  href="mailto:info@nomadverse.com"
                   class="text-lg font-semibold text-white"
-                  >info@NomadVersecom</a
+                  >info@nomadverse.com</a
                 >
               </div>
             </div>
 
-            <div class="flex gap-x-20">
+            <div class="flex gap-x-20" aria-label="Footer Navigation">
               <div
                 class="flex flex-col gap-3 text-sm text-gray-300"
                 data-aos="fade-up"
@@ -1227,7 +1287,7 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/main.js"></script>
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init({
